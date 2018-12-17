@@ -15,7 +15,8 @@ if basedir not in sys.path:
     sys.path.insert(0, basedir)
 
 app.logger.error(str(basedir))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///%s/db/%s.sqlite3' % (basedir, "madeit")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///%s/db/%s.sqlite3' % (basedir, "madeit_db")
+print(app.config['SQLALCHEMY_DATABASE_URI'])
 app.logger.error(app.config['SQLALCHEMY_DATABASE_URI'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
